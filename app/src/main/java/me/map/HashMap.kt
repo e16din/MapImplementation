@@ -3,7 +3,7 @@ package me.map
 import java.util.LinkedList
 
 class KeyValue<T>(val key:Any, var value:T)
-class HashMap<T>(val bucketsCount: Int = 1024*1024) {
+class HashMap<T>(val bucketsCount: Int = 16) {
     private val buckets = mutableListOf<LinkedList<KeyValue<T>>>().apply {
         repeat(bucketsCount) {
             add(LinkedList<KeyValue<T>>())

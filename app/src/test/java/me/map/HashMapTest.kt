@@ -78,7 +78,7 @@ class HashMapTest {
     @Test
     fun productivityNewMap() { // 1 771 ms, 2 762 ms
         val start = System.currentTimeMillis()
-        val map = HashMap<String>()
+        val map = HashMap<String>(bucketsCount = 1024*1024)
         repeat(1024*1024) {
             map.put("Key$it", "Value$it")
            // println("i: $it")
